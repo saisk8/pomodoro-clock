@@ -20,7 +20,10 @@
     ]
   },
   "keywords": [],
-  "author": "",
+  "author": "Sai Kishore Komanduri",
+  "contributors": [
+    "Sai Somanath Komanduri"
+  ],
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
