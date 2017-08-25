@@ -31,9 +31,9 @@ class PomodoroClock {
 			totalLengthInSeconds,
 			progressInSeconds
 		) => {
-			const elapsedProgressInSeconds = (
-				progressInSeconds && (progressInSeconds + ((Date.now() - startTime) / 1000))
-			) || (Date.now() - startTime) / 1000;
+			const elapsedProgressInSeconds = progressInSeconds + (
+				(Date.now() - startTime) / 1000
+			);
 			const inProgress = elapsedProgressInSeconds < totalLengthInSeconds;
 			if (!this.state.pause) {
 				if (inProgress) {
@@ -65,11 +65,8 @@ class PomodoroClock {
 			}
 		};
 
-		this.startSession = (progressInSeconds) => {
-			const startTime = Date.now();
-			this.setState({
-				sessionInProgress: true
-			});
+		this.startSession = (progressInSeconds = 0, startTime = Date.now()) => {
+			this.setState({ sessionInProgress: true });
 			setTimeout(
 				() => this.updateElapsedTime(
 					startTime,
@@ -82,11 +79,8 @@ class PomodoroClock {
 			// this.playSessionEndAudio();
 		};
 
-		this.startBreak = (progressInSeconds) => {
-			const startTime = Date.now();
-			this.setState({
-				breakInProgress: true
-			});
+		this.startBreak = (progressInSeconds = 0, startTime = Date.now()) => {
+			this.setState({ breakInProgress: true }); 
 			setTimeout(
 				() => this.updateElapsedTime(
 					startTime,
@@ -103,9 +97,9 @@ class PomodoroClock {
 		this.resume = () => {
 			this.setState({ pause: false });
 			if (this.state.sessionInProgress) {
-				this.startSession(this.state.elapsedProgressInSeconds, Date.now());
+				this.startSession(this.state.elapsedProgressInSeconds);
 			} else if (this.state.breakInProgress) {
-				this.startBreak(this.state.elapsedProgressInSeconds, Date.now());
+				this.startBreak(this.state.elapsedProgressInSeconds);
 			}
 		};
 		this.reset = () => {
