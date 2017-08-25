@@ -1,0 +1,22 @@
+{
+  "name": "pomodoro-clock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "eslint": "^4.5.0",
+    "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.6.0"
+  }
+}
