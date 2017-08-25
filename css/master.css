@@ -1,0 +1,25 @@
+h1 {
+				padding: 18px;
+}
+
+.time {
+				font-size: 7rem;
+				font-style: normal;
+				font-weight: 100;
+}
+
+.hover {
+				cursor: pointer;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+				outline: 0 !important;
+				box-shadow: none;
+}
+
+.box {
+				border-radius: 10px;
+				box-shadow: 1px 5px rgba(0, 0, 0, 0.38);
+				margin: 5px;
+				margin-top: 10px;
+}
